@@ -41,7 +41,7 @@ public class CasoDAO implements CRUD<CasoDTO> {
             /*Tengo dudas de como va a traer el campo 
                 (este metodo realiza la query de arriba), ya que en esta seccion
                 Deberia decirle "insterte los valores que estan en esta ubicacion"
-                */
+                
             ps.setInt(1, x.getId_abogado().getId_abogado());
             ps.setInt(2, x.getId_fecha_juzgado().getId_fecha_juzgado());
             ps.setInt(3, x.getId_demandante().getId_demandante());
@@ -52,7 +52,7 @@ public class CasoDAO implements CRUD<CasoDTO> {
             ps.setInt(8, x.getId_cese_convivencia().getId_cese_convivencia());
             ps.setDate(9, x.getFecha_celebracion_matri());
             ps.setString(10, x.getObservaciones());
-
+*/
             if (ps.executeUpdate() > 0) {
                 return true;
             }
@@ -66,7 +66,7 @@ public class CasoDAO implements CRUD<CasoDTO> {
     public boolean update(CasoDTO x) {
         try {
             PreparedStatement ps = cnn.getCnn().prepareStatement(SQL_UPDATE);
-            
+            /*
             ps.setInt(1, x.get().getId_abogado());
             ps.setInt(2, x.getId_fecha_juzgado().getId_fecha_juzgado());
             ps.setInt(3, x.getId_demandante().getId_demandante());
@@ -77,7 +77,7 @@ public class CasoDAO implements CRUD<CasoDTO> {
             ps.setInt(8, x.getId_cese_convivencia().getId_cese_convivencia());
             ps.setDate(9, x.getFecha_celebracion_matri());
             ps.setString(10, x.getObservaciones());
-
+*/
             if (ps.executeUpdate() > 0) {
                 return true;
             }
@@ -97,7 +97,7 @@ public class CasoDAO implements CRUD<CasoDTO> {
             ResultSet res = ps.executeQuery();
 
             if (res.next()) {
-                
+                /*
                 caso.set(1, x.getId_abogado().getId_abogado());
                 caso.set(2, x.getId_abogado().getId_abogado());
                 caso.set(3, x.getId_fecha_juzgado().getId_fecha_juzgado());
@@ -109,6 +109,7 @@ public class CasoDAO implements CRUD<CasoDTO> {
                 caso.set(9, x.getId_cese_convivencia().getId_cese_convivencia());
                 caso.set(10, x.getFecha_celebracion_matri());
                 caso.set(11, x.getObservaciones());
+                */
             }
 
         } catch (SQLException ex) {
