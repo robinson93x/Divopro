@@ -97,12 +97,6 @@ public class CasoDAO implements CRUD<CasoDTO> {
             ResultSet res = ps.executeQuery();
 
             if (res.next()) {
-                libro.setIdLibro(res.getInt("id_libro"));
-                libro.setTitulo(res.getString("titulo"));
-                libro.setAutor(res.getString("autor"));
-                libro.setPrecio(res.getInt("precio"));
-                libro.setFechaRegistro(res.getDate("fecha_registro"));
-                libro.setEditorial(new EditorialDTO(res.getInt("COD_EDITORIAL"), res.getString("editorail")));
                 
                 caso.set(1, x.getId_abogado().getId_abogado());
                 caso.set(2, x.getId_abogado().getId_abogado());
@@ -118,9 +112,9 @@ public class CasoDAO implements CRUD<CasoDTO> {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(LibroDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CasoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return libro;
+        return caso;
     }
     
 }
